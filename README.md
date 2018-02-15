@@ -4,11 +4,15 @@ Easy CloudFormation deploys using only bash, jq and the aws cli
 
 ## Installation
 
-    $ curl -L https://raw.githubusercontent.com/mgoodings/cfd/master/install.sh | bash
+    $ curl -sfL https://raw.githubusercontent.com/mgoodings/cfd/master/install.sh | sh
+
+or
+
+    $ npm install -g cfd
 
 ## Example
 
-![](https://i.imgur.com/sjwSYkI.gif)
+![](https://i.imgur.com/VjocNY9.gif)
 
     $ cfd validate template.yml
 
@@ -30,10 +34,11 @@ Output can also be obtained from `cfd --help`.
 
     Commands:
 
-      cfd validate <template>                 Validate a template
-      cfd plan <stack> <template> <params?>   Plan changes for a stack
-      cfd apply <stack> <template> <params?>  Apply changes to a stack
-      cfd tail <stack>                        Tail latest stack events
+      cfd validate <template>                                            Validate a template
+      cfd package <template> <output-template> <s3-bucket> <s3-prefix?>  Package a template for deployment
+      cfd plan <stack> <template> <params?>                              Plan changes for a stack
+      cfd apply <stack> <template> <params?>                             Apply changes to a stack
+      cfd tail <stack>                                                   Tail latest stack events
 
     Options:
 
@@ -44,6 +49,7 @@ Output can also be obtained from `cfd --help`.
     Aliases:
 
       v   validate
+      k   package
       p   plan
       a   apply
       t   tail
