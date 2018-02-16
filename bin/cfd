@@ -102,7 +102,6 @@ _get_stack_params() {
     # params+=(`env | awk -v ORS=" " -F= '{if($1 ~ /^CFVAR_/) {gsub("^CFVAR_", "", $1); print $1 "=" $2}}'`)
     params+=(`env | awk -v ORS=" " OFS="=" -F= '{if($1 ~ /^CFVAR_/) {gsub("^CFVAR_", "", $1)}}1'`)
   fi
-  fi
 
   echo "${params[*]}"
 }
